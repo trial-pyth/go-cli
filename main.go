@@ -1,6 +1,8 @@
 package main
 
 import (
+	"time"
+
 	"github.com/trial-pyth/go-cli/internal/pokeapi"
 )
 
@@ -14,7 +16,7 @@ type config struct {
 
 func main() {
 	cfg := config{
-		pokeapiClient: pokeapi.NewClient(),
+		pokeapiClient: pokeapi.NewClient(time.Hour),
 	}
 
 	startRepl(&cfg)
