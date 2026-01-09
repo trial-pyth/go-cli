@@ -41,7 +41,7 @@ func (c *Client) ListLocationAreas(pageURL *string) (LocationAreaResp, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode > 399 {
-		return LocationAreaResp{}, fmt.Errorf("bas status code: %v", resp.StatusCode)
+		return LocationAreaResp{}, fmt.Errorf("has status code: %v", resp.StatusCode)
 	}
 
 	dat, err = io.ReadAll(resp.Body)
@@ -92,7 +92,7 @@ func (c *Client) GetLocationArea(locationAreaName string) (LocationArea, error) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode > 399 {
-		return LocationArea{}, fmt.Errorf("bas status code: %v", resp.StatusCode)
+		return LocationArea{}, fmt.Errorf("has status code: %v", resp.StatusCode)
 	}
 
 	dat, err = io.ReadAll(resp.Body)
